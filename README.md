@@ -1,7 +1,7 @@
 # Netbackup status nortification.
 
 This tool is nortice job status when Netbackup jobs are delayed.
-Send application platform is [https://tocaro.im/?locale=ja](tocaro).
+Send application platform is [tocaro](https://tocaro.im/?locale=ja).
 
 ## Require
 Python 3
