@@ -3,14 +3,16 @@ import json
 import sys
 
 
-def send_tocaro(url_id,title,message):
+def send_tocaro(url_id,title,message,tocaro_text="",color="info"):
 	args = sys.argv
 	url = "https://hooks.tocaro.im/integrations/inbound_webhook/" + url_id
 
 	method = "POST"
 	headers = {"Content-Type" : "application/json"}
 
-	obj = { "text": "Delayed NBU-JOB info nortice. from take-script.", "color": "info", "attachments": [{"title": title, "value": message}, {}] }
+	obj = { "text": tocaro_text, 
+			"color": color, 
+			"attachments": [{"title": title, "value": message}, {}] }
 	json_data = json.dumps(obj).encode("utf-8")
 
 	request = urllib.request.Request(url, data=json_data, method=method, headers=headers)
